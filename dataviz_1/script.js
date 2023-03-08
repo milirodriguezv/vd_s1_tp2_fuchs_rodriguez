@@ -1,13 +1,25 @@
-d3.csv('data2000.csv', d3.autoType).then(data => {
+d3.csv('astronautas.csv', d3.autoType).then(data => {
+  
   console.log(data)
-  // Guardamos el svg generado en la variable chart
+ 
   let chart = Plot.plot({
     marks: [
-      Plot.dot(data, {
-        x: 'fertility',
+      Plot.barX(data, {
+        x: 'mision_hs',
+        y: 'nacionalidad',
+        sort: 'mision_hs',
+        fill: 'mision_hs'
       }),
     ],
+    y: {
+      domain: d3.sort(data, (a, b) => d3.descending(a.mision_hs, b.mision_hs)).map(d => d.nacionalidad),
+    },
+    x: {
+      grid: true,
+    },
+    height: 1000,
+    marginLeft: 100,
   })
-  // Agregamos chart al div#chart de index.html
+ 
   d3.select('#chart').append(() => chart)
 })
