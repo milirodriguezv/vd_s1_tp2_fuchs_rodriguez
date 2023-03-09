@@ -4,25 +4,22 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
 
   let chart = Plot.plot({
     marks: [
-      Plot.dot(data,
-        //data.filter(d => d.genero == 'femenino'),
+      Plot.areaY(
+        data.filter(d => d.nacionalidad == 'EE.UU.'),
         {
-          x: 'edad_mision',
+          x: 'anio',
           y: 'mision_hs',
-          z: 'genero',
-          symbol: 'genero'
+          opacity: 0.3,
         },
       ),
     ],
-    symbol: {
-      legend: true,
-    },
+    line: true,
     x: {
-      // https://github.com/observablehq/plot#formats
       tickFormat: 'd',
+      ticks: 11,
     },
     y: {
-      nice: true,
+      ticks: 7,
       grid: true,
     },
   })
