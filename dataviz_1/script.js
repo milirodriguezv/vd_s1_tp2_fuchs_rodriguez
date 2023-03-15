@@ -10,7 +10,10 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         fill: 'mision_hs'
       }),
     ],
-    
+    color: {
+      scheme: 'reds',
+      legend: true,
+    },
     y: {
       domain: d3.sort(data, (a, b) => d3.descending(a.mision_hs, b.mision_hs)).map(d => d.nacionalidad),
     },
