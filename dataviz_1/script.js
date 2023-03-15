@@ -11,7 +11,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       }),
     ],
     color: {
-      scheme: 'reds',
+      scheme: 'greens',
       legend: true,
     },
     y: {
