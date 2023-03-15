@@ -8,28 +8,29 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         {x: 'anio_mision', y: 'mision_hs',
         fill: d => (d.anio_mision == 2016 ? 'purple' :  'orange')},
       )),
-      // Plot.text(data, {
-      //   x: 'anio_mision',
-      //   y: 'mision_hs',
-      //   text: '78000 horas',
-      //   fill: d => (d.anio_mision == '2016' ? 'white' : 'transparent'),
-      //   fpntWeight: 'bold',
-      //   fontSize: 18,
-      //   dy: -5,
-      // }),
-      Plot.axisY(d3.ticks(0, 80000, 8)),
-      
+     
+      Plot.axisX({y: (x) => data.find((d) => d.mision_hs >= x)?.anio_mision,  //poner los anios arriba de cada barra
+        fontWeight: 'bold', 
+        fontSize: 20,
+        tickSize: 0,
+      }),
+  
+      Plot.axisX({fill: "white", tickSize: 0}),
       
     ],
     x: {
-      label: 'Anio',
-      labelOffset: 30
+      label: null,
+      labelOffset: 30,
+  
     },
+
     y: {
       label: 'Horas de mision',
+      ticks: 15,
       grid: true,
       labelOffset: 5,
     },
+
     style: {
       fontFamily: 'sans-serif',
       fontSize: 14,
