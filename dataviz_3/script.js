@@ -28,7 +28,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     style:{
       fontFamily: 'verdana',
       fontSize: 12,
-      color:'darkviolet',
+      color:'darkorange', 
       padding: '10px',
     },
   })
