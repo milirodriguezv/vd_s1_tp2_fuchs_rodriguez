@@ -10,9 +10,9 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
           x: 'edad_mision',
           y: 'mision_hs',
           z: 'genero',
-          fill: 'genero',
-          opacity: 0.5
-          
+          opacity: 0.5,
+          fill: d => (d.genero == 'femenino' ? 'darkviolet' : 'darkorange'),
+          legend:true,
         },
       ),
     ],
@@ -27,6 +27,16 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       nice: true,
       grid: true,
     },
+    style:{
+      fontFamily: 'verdana',
+      fontSize: 12,
+      color:'black', 
+      padding: '10px',
+    },
+    width: 700,
+    height: 400,
+    marginLeft: 80,
+    
   })
   d3.select('#chart').append(() => chart)
 })
