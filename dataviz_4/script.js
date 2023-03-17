@@ -10,7 +10,8 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       )),
      
       Plot.axisX({y: (x) => data.find((d) => d.mision_hs >= x)?.anio_mision,  //poner los anios arriba de cada barra
-        fontWeight: 'bold', 
+      fontFamily: 'Arial',
+      fontWeight: 'bold', 
         fontSize: 20,
         tickSize: 0,
       }),
@@ -32,7 +33,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     },
 
     style: {
-      fontFamily: 'sans-serif',
+      fontFamily: 'Verdana',
       fontSize: 14,
       //background: 'hsl(0, 1%, 50%)',
       padding: '50px'

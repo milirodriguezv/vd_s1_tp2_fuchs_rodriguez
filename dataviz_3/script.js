@@ -4,8 +4,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
 
   let chart = Plot.plot({
     marks: [
-      Plot.barX(
-        data,
+      Plot.barX(data,
         Plot.groupY(
           {
             x1: 'min',
@@ -13,18 +12,25 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
           },
           { x: 'mision_hs', y: 'nacionalidad' },
         ),
+
       ),
       Plot.ruleY([0]),
       Plot.gridY({x: (y) => data.find((d) => d.nacionalidad >= y)?.mision_hs, insetLeft: -6}),
-      Plot.axisY({x: (y) => data.find((d) => d.nacionalidad >= y)?.mision_hs, insetLeft: -6, textStroke: 'white'})
+      Plot.axisY({x: (y) => data.find((d) => d.nacionalidad >= y)?.mision_hs, insetLeft: -6, fill: 'black', textStroke: 'white'})
     ],
     x: {
-      label: 'Min mision_hs, Max mision_hs',
+      label: 'Min,Max mision_hs',
     },
     grid: true,
     nice: true,
     line: true,
-    marginRight: 0
+    marginRight: 0,
+    style:{
+      fontFamily: 'verdana',
+      fontSize: 12,
+      color:'darkviolet',
+      padding: '10px',
+    },
   })
   d3.select('#chart').append(() => chart)
 })
