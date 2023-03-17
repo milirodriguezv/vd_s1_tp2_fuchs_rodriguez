@@ -10,7 +10,9 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
           x: 'edad_mision',
           y: 'mision_hs',
           z: 'genero',
-          symbol: 'genero'
+          fill: 'genero',
+          opacity: 0.5
+          
         },
       ),
     ],

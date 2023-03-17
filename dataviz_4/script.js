@@ -3,43 +3,46 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
   console.log(data)
 
   let chart = Plot.plot({
-    line: true,
-    nice: true,
-    zero: true,
-    grid: true,
-    color: {
-      legend: true,
-      range: ['violet', 'orange'],
-    },
     marks: [
-      Plot.dot(
-        data.filter(d => d.nacionalidad == 'EE.UU.'),
-        {
-        x: 'mision_hs',
-        y: 'eva_mision_hs',
-        fill: 'genero'
+      Plot.barY(data, Plot.groupX({y: 'sum'},
+        {x: 'anio_mision', y: 'mision_hs',
+        fill: d => (d.anio_mision == 2016 ? 'purple' :  'orange')},
+      )),
+     
+      Plot.axisX({y: (x) => data.find((d) => d.mision_hs >= x)?.anio_mision,  //poner los anios arriba de cada barra
+        fontWeight: 'bold', 
+        fontSize: 20,
+        tickSize: 0,
       }),
+  
+      Plot.axisX({fill: "white", tickSize: 0}),
+      
     ],
-    width: 640,
-    height: 400,
-    margin: 60,
-    inset: 80,
-    zero: true,
     x: {
-      label: 'Fertilidad',
-      labelOffset: 40,
+      label: null,
+      labelOffset: 30,
+  
     },
+
     y: {
-      label: 'Grupo de países',
-      labelOffset: 50,
+      label: 'Horas de mision',
+      ticks: 15,
+      grid: true,
+      labelOffset: 5,
     },
+
     style: {
       fontFamily: 'sans-serif',
-      fontSize: 13,
-      //background: 'hsl(0, 100%, 50%)',
-      color: 'black',
-      padding: '10px',
+      fontSize: 14,
+      //background: 'hsl(0, 1%, 50%)',
+      padding: '50px'
     },
+    width: 900,
+    height: 1000,
+    marginLeft: 80,
+    inset: 20
   })
+ 
   d3.select('#chart').append(() => chart)
 })
+

@@ -14,6 +14,9 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
           { x: 'mision_hs', y: 'nacionalidad' },
         ),
       ),
+      Plot.ruleY([0]),
+      Plot.gridY({x: (y) => data.find((d) => d.nacionalidad >= y)?.mision_hs, insetLeft: -6}),
+      Plot.axisY({x: (y) => data.find((d) => d.nacionalidad >= y)?.mision_hs, insetLeft: -6, textStroke: 'white'})
     ],
     x: {
       label: 'Min mision_hs, Max mision_hs',
@@ -21,6 +24,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     grid: true,
     nice: true,
     line: true,
+    marginRight: 0
   })
   d3.select('#chart').append(() => chart)
 })
