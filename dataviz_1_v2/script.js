@@ -4,33 +4,30 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
   let chart = Plot.plot({
     marks: [
       Plot.barX(data, 
-        Plot.groupY({x:'sum'}, {x: 'mision_hs',
-        y: 'nacionalidad'})),
-        Plot.ruleY([0])
+        Plot.groupY({x:'sum'}, {x: 'mision_hs', y: 'nacionalidad', fill: 'genero'}))
     ],
-    x: {
-      grid: true,
-      label: 'Horas de Mision',
-      labelOffset: 20,
+    color: {
+      type: 'categorical',
+      scheme: 'Pastel1',
+      legend: true,
     },
     y: {
-      label: 'Grupo de países',
-      labelOffset: 150,
-      domain: d3.sort(data, a => -a.mision_hs).map(d => d.nacionalidad),
+      //falta ordenar
+      label: 'Nacionalidad'
     },
-    
-    
-    height: 1000,
-    margin: 150,
+    x: {
+      grid: true,
+      tickFormat: 'd', 
+      label: 'Horas de misión totales',
+      labelOffset: 60
+    },
 
-    style: {
-      fontFamily: 'sans-serif',
-      fontSize: 13,
-      //background: 'hsl(0, 100%, 50%)',
-      color: 'black',
-      padding: '10px',
-    },
+    height: 1000,
+    marginLeft: 150,
+    marginBottom: 200
+  
   })
  
   d3.select('#chart').append(() => chart)
 })
+
