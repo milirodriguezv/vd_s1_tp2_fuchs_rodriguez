@@ -16,8 +16,9 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       label: 'Horas de misión por persona'
     },
     y: {
-      domain: d3.sort(data, (a, b) => d3.descending(a.mision_hs, sb.mision_hs)).map(d => d.nacionalidad),
-      label: 'Nacionalidad'
+      //domain: d3.sort(data, (a, b) => d3.descending(a.mision_hs, sb.mision_hs)).map(d => d.nacionalidad),
+      label: 'Nacionalidad',
+      labelOffset: 190
     },
     x: {
       grid: true,
@@ -26,12 +27,13 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       labelOffset: 60
     },
     style:{
-      fontFamily: 'verdana',
+      fontFamily: 'sans-serif',
       fontSize: 12,
     },
 
-    height: 1000,
-    marginLeft: 150,
+    height: 800,
+    width: 700,
+    marginLeft: 200,
     marginBottom: 200
   
   })
