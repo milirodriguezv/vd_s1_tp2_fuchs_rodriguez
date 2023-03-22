@@ -9,13 +9,12 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     color: {
       type: 'categorical',
       scheme: 'Pastel1',
-      legend: true,      
-      	//cambiar letra de legend
+
     },
     y: {
       domain: d3.sort(data, (a, b) => d3.descending(a.mision_hs, b.mision_hs)).map(d => d.nacionalidad),
       label: 'Nacionalidad',
-      labelOffset: 200
+      labelOffset: 200,
     },
     x: {
       grid: true,
@@ -26,16 +25,29 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     style: {
       fontFamily: 'Arial',
       fontSize: 14,
-    },
+      //fontWeight: d => (d.nacionalidad == 'EE.UU.' ? 'bold' : 'bold')
+      //queria poner EEUU y Rusia en negrita 
 
+    },
     height: 600,
-    width: 500,
+    width: 600,
     marginLeft: 200,
     marginBottom: 200,
+  })
 
-  
+  let legend = Plot.legend({
+    color: {
+      domain: ["Femenino", "Masculino"],
+      type: 'categorical',
+      scheme: 'Pastel1',
+    },
+    style: {
+      fontFamily: "Arial",
+      fontSize: "15px",
+    },
   })
  
+  d3.select('#legend').append(() => legend)
   d3.select('#chart').append(() => chart)
 })
 

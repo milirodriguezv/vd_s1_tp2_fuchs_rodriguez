@@ -24,7 +24,8 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         }),
     ],
     color: {
-      legend: true,
+      //legend: true,
+      type: 'categorical',
       range: ['red', 'yellow']
     },
     x: {
@@ -44,8 +45,8 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       ticks: 5
     },
     style:{
-      fontFamily: 'Arial',
-      fontSize: 12,
+      fontFamily: 'Trebuchet MS',
+      fontSize: 15,
       color:'white', 
       padding: '10px',
       background: 'hsl(0, 0%, 0%)'
@@ -55,5 +56,18 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     margin: 60,
     
   })
+
+  let legend = Plot.legend({
+    color: {
+      domain: ["Femenino", "Masculino"],
+      type: 'categorical',
+      range: ['red', 'yellow'],
+    },
+    style: {
+      fontFamily: "Arial",
+      fontSize: "15px",
+    },
+  })
+
   d3.select('#chart').append(() => chart)
 })
