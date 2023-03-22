@@ -12,12 +12,20 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
           symbol: 'star',
           fill: 'genero',
           opacity: 0.5,
-        },
-      ),
+        }),
+        Plot.text(data.filter(d => d.nacionalidad == 'U.S.S.R/Rusia'),
+        {
+          x: 'edad_mision',
+          y: 'mision_hs',
+          text: 'nombre',
+          fill: d=> (d.genero == 'femenino' ? 'red' : "transparent"),
+          dy : -20,
+          fontWeight : 'bold',
+        }),
     ],
     color: {
       legend: true,
-      range: ['#F9E628', '#2088EA']
+      range: ['red', 'yellow']
     },
     x: {
       tickFormat: 'd',
@@ -36,7 +44,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       ticks: 5
     },
     style:{
-      fontFamily: 'sans-serif',
+      fontFamily: 'Arial',
       fontSize: 12,
       color:'white', 
       padding: '10px',

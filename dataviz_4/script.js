@@ -23,7 +23,9 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       label:'Año de misión',
       tickFormat: 'd',
       labelOffset: 60,
+      //fontWeight: d => (d.anio_mision == 2016 ? 'bold' :  '')
     },
+
 
     y: {
       label: 'Horas de misión',

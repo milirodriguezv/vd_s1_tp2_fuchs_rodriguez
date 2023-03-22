@@ -2,50 +2,53 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
   
   console.log(data)
 
-  let chart = Plot.plot({
-    marks: [
-      Plot.barX(data,
-        Plot.groupY(
-          {
-            x1: 'min',
-            x2: 'max',
-          },
-          { x: 'mision_hs', y: 'nacionalidad' },
-        ),
-      ),
-      Plot.text(data, {
-        x: 'mision_hs',
-        y: 'nacionalidad',
-        text: 'nacionalidad',
-        textAnchor: "end",
-        dx: -6
-      })
-      // Plot.ruleY([0]),
-      // Plot.gridY({x: (y) => data.find((d) => d.nacionalidad >= y)?.mision_hs, insetLeft: -6}),
-      // Plot.axisY({x: (y) => data.find((d) => d.nacionalidad >= y)?.mision_hs, insetLeft: -6, fill: 'black', textStroke: 'white'})
-    ],
-    x: {
-      label: 'Min-Max horas de misión',
-      tickFormat: 'd'
-    },
-    y: {
-      ticks: null,
-      label: 'Nacionalidad',
-      axis: null
-    },
+  let data_filtrada = data.filter(d => d.nacionalidad == 'U.S.S.R/Rusia' || d.nacionalidad == 'EE.UU.')
 
+  let chart = Plot.plot({
+    
+    marks: [
+      Plot.dot(data_filtrada, {
+        x: "anio_mision",
+        y: "mision_hs",
+        fill: d => (d.nacionalidad == 'EE.UU.' ? '#E53935 ' : d.nacionalidad == 'U.S.S.R/Rusia' ? '#1976D2 ' : 'transparent'),
+        r: 3,
+      }),
+      Plot.frame(),
+      Plot.axisX({
+        tickFormat: "d",
+        //domain: [2008, 2023],
+        label: 'Anio',
+        labelOffset: 30,
+        ticks: 6,
+      }),
+      
+    ],
+    y: {
+      label: 'Horas de Mision',
+    },
+    
     grid: true,
     nice: true,
-    line: true,
-    marginBottom: 50,
-    marginLeft: 200,
-
+    
+    marginBottom: 60, 
+    marginLeft: 60, 
+    width: 500,
+    height: 300,
     style:{
-      fontFamily: 'verdana',
+      fontFamily: 'Arial',
       fontSize: 12,
+      color:'black', 
       padding: '10px',
     },
-  })
+    facet:{
+      data: data_filtrada,
+      //data: data,
+      x: "nacionalidad",
+      label: "Nacionalidad",
+    }
+
+  });
+    
   d3.select('#chart').append(() => chart)
 })
 
