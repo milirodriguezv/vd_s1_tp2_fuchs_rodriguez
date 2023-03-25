@@ -33,17 +33,17 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       domain: [0, 80000],
       tickFormat: 'd',
       grid: true,
-      labelOffset: 50,
-      insetTop: 50
+      labelOffset: 20,
+      insetTop: 40
     },
 
     style: {
       fontFamily: 'Verdana',
       fontSize: 14,
-      padding: '50px'
+      padding: '30px'
     },
-    width: 700,
-    height: 800,
+    width: 800,
+    height: 500,
     marginLeft: 70,
     marginBottom: 70,
     inset: 20
