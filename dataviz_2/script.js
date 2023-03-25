@@ -45,7 +45,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       ticks: 5
     },
     style:{
-      fontFamily: 'Trebuchet MS',
+      fontFamily: 'Arial',
       fontSize: 15,
       color:'white', 
       padding: '10px',
