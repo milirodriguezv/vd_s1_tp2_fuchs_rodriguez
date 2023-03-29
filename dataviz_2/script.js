@@ -11,7 +11,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
           z: 'genero',
           symbol: 'star',
           fill: 'genero',
-          opacity: 0.5,
+          opacity: d=> (d.genero == 'femenino' ? 1 : 0.5),
         }),
         Plot.text(data.filter(d => d.nacionalidad == 'U.S.S.R/Rusia'),
         {

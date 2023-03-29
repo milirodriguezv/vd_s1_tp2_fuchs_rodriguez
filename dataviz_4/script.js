@@ -6,7 +6,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     marks: [
       Plot.barY(data, Plot.groupX({y: 'sum'},
         {x: 'anio_mision', y: 'mision_hs',
-        fill: d => (d.anio_mision == 2016 ? 'purple' :  'orange')},
+        fill: d => (d.anio_mision == 2016 ? '#8e0690' :  'orange')},
       )),
      
       // Plot.axisX({y: (x) => data.find((d) => d.mision_hs >= x)?.anio_mision,  //poner los anios arriba de cada barra
