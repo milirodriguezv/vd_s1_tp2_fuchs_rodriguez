@@ -11,27 +11,45 @@
       }
       #chart svg{
         max-width: initial;
-        margin-left: 230px;
+        margin: auto;
       }
 
       h1 {
-        font-family: 'Trebuchet MS';
+        font-family: 'Tahoma', sans-serif;
         margin-top: 30px; 
-        margin-Left: 350px;
-        margin-right: 340px; 
+        text-align: center;
       }  
       a {
-        color: #8a388b;
+        color: #8e0690;
         padding: 5px;
       }
+      p {
+        font-family: 'Tahoma', sans-serif;
+        margin-top: 30px; 
+        text-align: center;
+        font-size: medium;
+      }
+
+      p.fuente{
+        font-family: 'Tahoma', sans-serif;
+        font-size: small;
+        color: #a19f9f;
+        margin-top: -10px;
+      } 
 
     </style>
   </head>
   <body>
     <h1><a id="principal">2016:</a> el año de los viajes espaciales</h1>
+
+    <p>Con cerca de 80.000 horas, 2016 es el año con el registro de más tiempo acumulado de misiones en el espacio. </p>
     
 
     <div id="chart"></div>
+
+    <p class="fuente">Datos extraídos de la NASA</p>
+    <p class="fuente">Autoras: Valentina Fuchs & Milagros Rodríguez Ventura</p>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>

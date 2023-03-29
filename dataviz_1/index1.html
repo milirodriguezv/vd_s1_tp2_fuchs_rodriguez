@@ -14,17 +14,15 @@
       }
       
       h1 {
-        font-family: 'Arial';
+        font-family: 'Tahoma', sans-serif;
         margin-top: 30px; 
-        margin-Left: 340px;
-        margin-right: 340px;      
+        text-align: center;      
       }
 
       p{
-        font-family: 'Arial';
+        font-family: 'Tahoma', sans-serif;
         margin-top: 20px;
-        margin-Left: 300px;
-        margin-right: 300px; 
+        text-align: center;
       } 
 
       #chart div {
@@ -32,12 +30,20 @@
   	  }
 
       #chart svg {
-          margin-Left: 320px;
+        margin:auto;
       }
       
       #legend div {
         justify-content: center;
       }
+
+      p.fuente{
+        font-family: 'Tahoma', sans-serif;
+        font-size: small;
+        color: #a19f9f;
+        margin-top: -10px;
+      } 
+      
 
     </style>
   </head>
@@ -50,6 +56,10 @@
 
     <div id="legend"></div>
     <div id="chart"></div>
+
+    <p class="fuente">Datos extraídos de la NASA</p>
+    <p class="fuente">Autoras: Valentina Fuchs & Milagros Rodríguez Ventura</p>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>

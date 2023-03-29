@@ -11,31 +11,29 @@
       }
       #chart svg{
         max-width: initial;
+        margin: auto;
       }
 
       h1 {
-        font-family: 'Trebuchet MS';
+        font-family: 'Tahoma', sans-serif;
         margin-top: 30px; 
-        margin-Left: 400px;
-        margin-right: 400px; 
+        text-align: center; 
       }
-      h2 {
-        font-family: 'Trebuchet MS';
-        margin-top: 30px; 
-        margin-Left: 400px;
-        margin-right: 400px; 
-      }
-
-      #chart svg{ 
-        margin-Left: 360px;
-      }
+      
 
       p {
-        font-family: 'Trebuchet MS';
+        font-family: 'Tahoma', sans-serif;
         margin-top: 30px; 
-        margin-Left: 370px;
-        margin-right: 360px; 
+        text-align: center;
+        font-size: medium;
       }
+
+      p.fuente{
+        font-family: 'Tahoma', sans-serif;
+        font-size: small;
+        color: #a19f9f;
+        margin-top: -10px;
+      } 
 
     </style>
   </head>
@@ -43,12 +41,15 @@
 
     <h1>Compitiendo por el espacio...</h1>
 
-    <h2>Rusia y EE.UU.: ¿Quién lleva la ventaja?</h2>
+    <p>Rusia y EE.UU. compiten por sacar ventaja en cuanto a horas en el espacio, 
+      debido al visible empate entre ambas potencias.
+    </p>
 
     <div id="chart"></div>
 
-    <p>Vemos que están empatados que se yo blablablablablabalbsjdhjg</p>
-
+    <p class="fuente">Datos extraídos de la NASA</p>
+    <p class="fuente">Autoras: Valentina Fuchs & Milagros Rodríguez Ventura</p>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>

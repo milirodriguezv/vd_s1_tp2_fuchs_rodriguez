@@ -10,41 +10,47 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       Plot.dot(data_filtrada, {
         x: "anio_mision",
         y: "mision_hs",
-        fill: d => (d.nacionalidad == 'EE.UU.' ? '#E53935 ' : d.nacionalidad == 'U.S.S.R/Rusia' ? '#1976D2 ' : 'transparent'),
+        fill: d => (d.nacionalidad == 'EE.UU.' ? '#f56607' : d.nacionalidad == 'U.S.S.R/Rusia' ? '#8e0690' : 'transparent'),
         r: 3,
       }),
-      Plot.frame(),
+       
+      Plot.frame({
+        stroke: '#b0b0b0',
+      }),
       Plot.axisX({
         tickFormat: "d",
         //domain: [2008, 2023],
-        label: 'Anio',
+        label: 'Año',
         labelOffset: 30,
-        ticks: 6,
+        ticks: 6,        
       }),
       
     ],
     y: {
       label: 'Horas de Mision',
+      tickFormat: "d"
     },
     
-    grid: true,
+    //grid: true,
     nice: true,
     
     marginBottom: 60, 
     marginLeft: 60, 
-    width: 500,
-    height: 300,
+    width: 700,
+    height: 400,
     style:{
-      fontFamily: 'Arial',
+      fontFamily: 'Tahoma',
       fontSize: 12,
       color:'black', 
       padding: '10px',
+      
     },
     facet:{
       data: data_filtrada,
       //data: data,
       x: "nacionalidad",
-      label: "Nacionalidad",
+      label: null,
+      
     }
 
   });

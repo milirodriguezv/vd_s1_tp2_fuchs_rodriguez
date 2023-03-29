@@ -18,7 +18,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
           x: 'edad_mision',
           y: 'mision_hs',
           text: 'nombre',
-          fill: d=> (d.genero == 'femenino' ? 'red' : "transparent"),
+          fill: d=> (d.genero == 'femenino' ? '#ff6f00' : "transparent"),
           dy : -20,
           fontWeight : 'bold',
         }),
@@ -26,7 +26,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     color: {
       //legend: true,
       type: 'categorical',
-      range: ['red', 'yellow']
+      range: ['#ff6f00', 'white']
     },
     x: {
       tickFormat: 'd',
@@ -45,7 +45,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       ticks: 5
     },
     style:{
-      fontFamily: 'Arial',
+      fontFamily: 'Tahoma',
       fontSize: 15,
       color:'white', 
       padding: '10px',
@@ -55,18 +55,6 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     height: 400,
     margin: 60,
     
-  })
-
-  let legend = Plot.legend({
-    color: {
-      domain: ["Femenino", "Masculino"],
-      type: 'categorical',
-      range: ['red', 'yellow'],
-    },
-    style: {
-      fontFamily: "Arial",
-      fontSize: "15px",
-    },
   })
 
   d3.select('#chart').append(() => chart)

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yelena Serova</title>
     <style>
+      body { background-color: rgb(0, 0, 0); }
       #chart{
         overflow-y:auto;
       }
@@ -18,7 +19,8 @@
   	  }
 
       #chart svg {
-          margin-Left: 250px;
+          margin-Left: 275px;
+          margin: auto;
       }
       
       #legend div {
@@ -26,13 +28,26 @@
       }
 
       h1 {
-        font-family: 'Arial';
+        font-family: 'Tahoma', sans-serif;
         margin-top: 30px; 
-        margin-Left: 240px;
-        margin-right: 100px;      
+        text-align: center;    
+        margin-bottom: 30px;
+        color: rgb(255, 255, 255);
       }
      
-
+      p {
+        font-family: 'Tahoma', sans-serif;
+        margin-top: -10px; 
+        font-size: medium;
+        text-align: center;
+        color: rgb(255, 255, 255);
+      }
+      p.fuente{
+        font-family: 'Tahoma', sans-serif;
+        font-size: small;
+        color: #a19f9f;
+        margin-top: -10px;
+      } 
       
 
     </style>
@@ -40,9 +55,19 @@
   <body>
     
     <h1>Yelena Serova, la única mujer rusa en el espacio</h1> 
+
+    <p>La joven de 38 años se registra como la única rusa en sumar horas de misión el espacio entre los años 2010 y 2019,
+    </p>
+    <p>
+      evidenciando una clara brecha de género en el campo.
+    </p>
     
     <div id="legend"></div>
     <div id="chart"></div>
+
+    <p class="fuente">Datos extraídos de la NASA</p>
+    <p class="fuente">Autoras: Valentina Fuchs & Milagros Rodríguez Ventura</p>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
