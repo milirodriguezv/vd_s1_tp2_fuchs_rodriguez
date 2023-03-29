@@ -4,7 +4,9 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
   let chart = Plot.plot({
     marks: [
       Plot.barX(data, 
-        Plot.groupY({x:'sum'}, {x: 'mision_hs', y: 'nacionalidad', fill: 'genero'}))
+        Plot.groupY({x:'sum'}, 
+        {x: 'mision_hs', y: 'nacionalidad', fill: 'genero', sort: {y: "x", reverse: true}},
+        ))
     ],
     color: {
       type: 'categorical',
@@ -12,7 +14,6 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
 
     },
     y: {
-      domain: d3.sort(data, (a, b) => d3.descending(a.mision_hs, b.mision_hs)).map(d => d.nacionalidad),
       label: 'Nacionalidad',
       labelOffset: 200,
       
@@ -30,7 +31,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       //queria poner EEUU y Rusia en negrita 
 
     },
-    height: 600,
+    height: 500,
     width: 600,
     marginLeft: 200,
     marginBottom: 100,
