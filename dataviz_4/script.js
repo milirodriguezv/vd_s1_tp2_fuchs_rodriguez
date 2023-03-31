@@ -9,21 +9,37 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
         fill: d => (d.anio_mision == 2016 ? '#8e0690' :  '#cfcfcf')},
       )),
      
-      // Plot.axisX({y: (x) => data.find((d) => d.mision_hs >= x)?.anio_mision,  //poner los anios arriba de cada barra
-      // fontFamily: 'Arial',
-      // fontWeight: 'bold', 
-      //   fontSize: 20,
-      //   tickSize: 0,
-      // }),
-  
-      // Plot.axisX({fill: "white", tickSize: 0}),
+/*
+      Plot.axisX({
+        ticks:
+        {display: false},
+      }
+      ),
+*/
       
+
+    Plot.text(data,
+      Plot.groupX(
+      {y: 'sum', text:"first"},
+      {x: 'anio_mision', y: 'mision_hs',
+      fill: d => (d.anio_mision == 2016 ? '#8e0690' :  '#cfcfcf'),
+      text: d=> (d.anio_mision).toFixed(0),
+      dy: -8,
+      fontWeight: d => (d.anio_mision == 2016 ? 'bold': 'normal'),
+      fontSize: '12px',}
+      ),
+    ),
+
     ],
+
+
     x: {
       label:'Año de misión',
-      tickFormat: 'd',
       labelOffset: 60,
+      ticks: {display :false},
     },
+
+    
 
 
     y: {
