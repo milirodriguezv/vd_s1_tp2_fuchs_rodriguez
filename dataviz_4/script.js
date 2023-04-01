@@ -36,7 +36,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     x: {
       label:'Año de misión',
       labelOffset: 60,
-      ticks: {display :false},
+      ticks: null,
     },
 
     
