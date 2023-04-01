@@ -10,16 +10,16 @@
       h2 {
         font-family: 'Tahoma', sans-serif;
         text-align: center;
-        font-size: 35px;
-        color: rgb(128, 11, 170);
+        font-size: 30px;
+        color: rgb(0, 0, 0);
         margin-top: 60px;
       } 
         
       h3 {
         font-family: 'Tahoma', sans-serif;
         text-align: center;
-        color: rgb(0, 0, 0);
-        font-size: 20px;   
+        color: rgb(121, 121, 121);
+        font-size:20px;   
       }
 
       p {
@@ -29,10 +29,6 @@
         font-size: medium;
       }
 
-      p.espacio {
-        margin-top: 0px;
-      }
-    
       h4 {
         font-family: 'Tahoma', sans-serif;
         color: rgb(0, 0, 0);
@@ -43,17 +39,113 @@
         padding: 10px;
         /*width: 300px;*/
         text-align: center;
+        font-size: 18px;
       }
+
+      p.espacio {
+        margin-top: 0px;
+      }
+    
+      
 
       a {
         font-family: 'Tahoma', sans-serif;
         color: rgb(0, 0, 0);
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
       }
 
       li{
         color:'#ba2bc4';
         
       }
+
+
+      #box0 {
+          
+          padding: 10px;
+          flex-grow: 3;
+          display: flex;
+          flex-direction: row;
+          border: null;
+        }
+ 
+        #box1 {
+          padding: 10px;
+          background-color: rgb(215, 163, 255);
+          
+          margin: 10px;
+          margin-right: 10px;
+          margin-left: 300px;
+          
+          display: flex;
+          flex-grow: 3;
+          flex-direction: column;
+          border-radius: 25px;
+        }
+ 
+        #box2 {
+          padding: 10px;
+          background-color: rgb(215, 163, 255);
+          
+          margin: 10px;
+          margin-right: 10px;
+          margin-left: 300px;
+          
+          display: flex;
+          flex-grow: 3;
+          flex-direction: column;
+          border-radius: 25px;
+        }
+        #box3 {
+          padding: 10px;
+          background-color: rgb(215, 163, 255);
+          
+          margin: 10px;
+          margin-left: 10px;
+          margin-right: 300px;
+          
+          display: flex;
+          flex-grow: 3;
+          flex-direction: column;
+          border-radius: 25px;
+        }
+ 
+        #box4 {
+          padding: 10px;
+          background-color: rgb(215, 163, 255);
+          
+          margin: 10px;
+          margin-left: 10px;
+          margin-right: 300px;
+          
+          display: flex;
+          flex-grow: 3;
+          flex-direction: column;
+          border-radius: 25px;
+        }
+
+
+
+        .middle-column {
+            flex-grow: 3;
+            display: flex;
+            flex-direction: column;
+        }
+ 
+        .middle-column div {
+            flex-grow: 3;
+            
+            
+        }
+ 
+        .middle-column div+div {
+            margin-top: 0px;
+        }
+
+
+
         </style>
   </head>
 
@@ -79,5 +171,47 @@
         <a href="/dataviz_4/index4.html" target="_blank" title="Link a...">2016 y las 79.000 horas espaciales</a>
       </li>
     </ul>
+
+
+<!--
+    <div id="box0">
+      <div id="box1">
+        <a href="/dataviz_1/index1.html" target="_blank" title="Link a...">Competencia Espacial</a>
+      </div>
+      
+      <div id="box2">
+        <a href="/dataviz_2/index2.html" target="_blank" title="Link a...">Yelena Serova: Estrella Rusa</a>
+      </div>
+      <div id="box3">
+        <a href="/dataviz_3/index3.html" target="_blank" title="Link a...">Líderes: EE.UU. y Rusia</a>
+      </div>
+
+      <div id="box4">
+        <a href="/dataviz_4/index4.html" target="_blank" title="Link a...">2016 y las 79.000 horas espaciales</a>
+    </div>
+  </div>
+-->
+
+
+
+  <div id="box0">
+    <div class="middle-column">
+      <div id="box1">
+        <a href="/dataviz_1/index1.html" target="_blank" title="Link a...">Competencia Espacial</a>
+      </div>
+      <div id="box2">
+        <a href="/dataviz_2/index2.html" target="_blank" title="Link a...">Yelena Serova: Estrella Rusa</a>
+      </div>
+    </div>
+        <div class="middle-column">
+          <div id="box3">
+            <a href="/dataviz_3/index3.html" target="_blank" title="Link a...">Líderes: EE.UU. y Rusia</a>
+          </div>
+          <div id="box4">
+            <a href="/dataviz_4/index4.html" target="_blank" title="Link a...">2016 y las 79.000 horas espaciales</a>
+        </div>
+        </div>
+  </div>
+
   </body>
 </html>
