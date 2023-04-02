@@ -6,23 +6,14 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     marks: [
       Plot.barY(data, Plot.groupX({y: 'sum'},
         {x: 'anio_mision', y: 'mision_hs',
-        fill: d => (d.anio_mision == 2016 ? '#8e0690' :  '#cfcfcf')},
+        fill: d => (d.anio_mision == 2016 ? 'rgb(255, 128, 0)' :  '#cfcfcf')},
       )),
-     
-/*
-      Plot.axisX({
-        ticks:
-        {display: false},
-      }
-      ),
-*/
       
-
     Plot.text(data,
       Plot.groupX(
       {y: 'sum', text:"first"},
       {x: 'anio_mision', y: 'mision_hs',
-      fill: d => (d.anio_mision == 2016 ? '#8e0690' :  '#cfcfcf'),
+      fill: d => (d.anio_mision == 2016 ? 'rgb(255, 128, 0)' :  '#cfcfcf'),
       text: d=> (d.anio_mision).toFixed(0),
       dy: -8,
       fontWeight: d => (d.anio_mision == 2016 ? 'bold': 'normal'),
@@ -30,17 +21,13 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       ),
     ),
 
+    Plot.axisX({
+      label:null,
+      tickFormat: null,
+      color: 'white'
+    })
+
     ],
-
-
-    x: {
-      label:'Año de misión',
-      labelOffset: 60,
-      ticks: null,
-    },
-
-    
-
 
     y: {
       label: 'Horas de misión',
@@ -60,7 +47,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     width: 700,
     height: 400,
     marginLeft: 70,
-    marginBottom: 70,
+    marginBottom: 20,
     inset: 20
   })
  

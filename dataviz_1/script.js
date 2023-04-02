@@ -10,7 +10,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     ],
     color: {
       type: 'categorical',
-      range: ['#eb8c34', '#a75fc9'],
+      range: ['rgb(255, 128, 0)', 'rgb(135, 77, 168)'],
 
     },
     y: {
@@ -27,12 +27,10 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     style: {
       fontFamily: 'Tahoma',
       fontSize: 14,
-      
-      //queria poner EEUU y Rusia en negrita 
-
     },
-    height: 500,
-    width: 600,
+
+    height: 600,
+    width: 700,
     marginLeft: 200,
     marginBottom: 100,
   })
@@ -41,11 +39,12 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     color: {
       domain: ["Femenino", "Masculino"],
       type: 'categorical',
-      range: ['#eb8c34', '#a75fc9'],
+      range: ['rgb(255, 128, 0)', 'rgb(135, 77, 168)'],
     },
     style: {
       fontFamily: 'Tahoma',
       fontSize: "12px",
+      
     },
   })
  

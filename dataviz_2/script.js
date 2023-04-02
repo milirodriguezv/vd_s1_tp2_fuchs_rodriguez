@@ -20,11 +20,9 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
           text: 'nombre',
           fill: d=> (d.genero == 'femenino' ? '#ff6f00' : "transparent"),
           dy : -20,
-          fontWeight : 'bold',
         }),
     ],
     color: {
-      //legend: true,
       type: 'categorical',
       range: ['#ff6f00', 'white']
     },
@@ -46,7 +44,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     },
     style:{
       fontFamily: 'Tahoma',
-      fontSize: 15,
+      fontSize: 14,
       color:'white', 
       padding: '10px',
       background: 'hsl(0, 0%, 0%)'

@@ -27,11 +27,11 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       
     ],
     y: {
-      label: 'Horas de Mision',
-      tickFormat: "d"
+      label: 'Horas de misión',
+      tickFormat: "d",
+      ticks: 5
     },
-    
-    //grid: true,
+
     nice: true,
     
     marginBottom: 60, 
@@ -40,14 +40,13 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     height: 400,
     style:{
       fontFamily: 'Tahoma',
-      fontSize: 12,
+      fontSize: 14,
       color:'black', 
       padding: '10px',
       
     },
     facet:{
       data: data_filtrada,
-      //data: data,
       x: "nacionalidad",
       label: null,
       
