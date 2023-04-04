@@ -19,7 +19,6 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       }),
       Plot.axisX({
         tickFormat: "d",
-        //domain: [2008, 2023],
         label: 'Año',
         labelOffset: 30,
         ticks: 6,        
