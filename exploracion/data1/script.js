@@ -18,7 +18,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
   
       
       y: {
-        domain: d3.sort(data, (a, b) => d3.descending(a.mision_hs, sb.mision_hs)).map(d => d.nacionalidad),
+        /*domain: d3.sort(data, (a, b) => d3.descending(a.mision_hs, sb.mision_hs)).map(d => d.nacionalidad),*/
         label: 'Nacionalidad'
       },
       x: {
@@ -37,6 +37,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       marginBottom: 200
     
     })
+    
    
     d3.select('#chart').append(() => chart)
   })
