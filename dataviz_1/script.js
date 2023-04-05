@@ -37,21 +37,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     marginLeft: 200,
     marginBottom: 100,
   })
-
-  let legend = Plot.legend({
-    color: {
-      domain: ["Femenino", "Masculino"],
-      type: 'categorical',
-      range: ['rgb(255, 128, 0)', 'rgb(135, 77, 168)'],
-    },
-    style: {
-      fontFamily: 'Tahoma',
-      fontSize: "12px",
-      
-    },
-  })
  
-  d3.select('#legend').append(() => legend)
   d3.select('#chart').append(() => chart)
 })
 

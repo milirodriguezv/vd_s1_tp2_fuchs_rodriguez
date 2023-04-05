@@ -17,23 +17,20 @@
         margin: auto;
       }
 
-      h2 {
+      h1 {
         font-family: 'Tahoma', sans-serif;
         margin-top: 30px; 
         text-align: center;
         color: #ffffff;
       }  
-      a {
-        color: rgb(255, 128, 0);
-        padding: 5px;
-        text-decoration: none;
-      }
-      p {
+ 
+      p#bajada {
         font-family: 'Tahoma', sans-serif;
-        margin-top: 30px; 
+        margin-top: 40px; 
         text-align: center;
         font-size: small;
         color: #ffffff;
+        font-size: 16px;
       }
 
       p.fuente{
@@ -41,8 +38,10 @@
         font-size: small;
         color: #a19f9f;
         margin-top: -10px;
+        text-align: center;
       } 
-      .flecha {
+
+      a#link {
         z-index:100;
         position: absolute;
         font-family: 'Lucida Console';
@@ -57,13 +56,12 @@
     </style>
   </head>
   <body>
-    <div class="flecha">
-      <a href="/index.html" target="_blank" title="Link a...">←</a>
-    </div>
+   
+    <a id = 'link' href="../../index.html">←</a>
     
-    <h2><a>2016:</a> el año de los viajes espaciales</h2>
+    <h1><a style = 'color:rgb(255, 128, 0)'>2016:</a> el año de los viajes espaciales</h1>
 
-    <p>Con cerca de 80.000 horas, 2016 es el año con el registro de más tiempo acumulado de misiones en el espacio. </p>
+    <p id = 'bajada'>Con cerca de 80.000 horas, 2016 es el año con el registro de más tiempo acumulado de misiones en el espacio. </p>
     
 
     <div id="chart"></div>

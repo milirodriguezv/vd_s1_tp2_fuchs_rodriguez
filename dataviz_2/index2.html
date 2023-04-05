@@ -13,7 +13,7 @@
           margin: auto;
       }
     
-      h2 {
+      h1 {
         font-family: 'Tahoma', sans-serif;
         margin-top: 30px; 
         text-align: center;    
@@ -21,21 +21,23 @@
         color: rgb(255, 255, 255);
       }
      
-      p {
+      p#bajada {
         font-family: 'Tahoma', sans-serif;
-        margin-top: -10px; 
-        font-size: small;
+        margin-top: 40px; 
         text-align: center;
+        font-size: 16px;
         color: rgb(255, 255, 255);
       }
+
       p.fuente{
         font-family: 'Tahoma', sans-serif;
         font-size: small;
         color: #a19f9f;
         margin-top: -10px;
+        text-align: center;
       } 
 
-      a {
+      a#link {
         z-index:100;
         position: absolute;
         font-family: 'Lucida Console';
@@ -53,14 +55,12 @@
   <body>
     
     
-    <a href="/index.html" target="_blank" title="Link a...">←</a>  
+    <a id = 'link' href="../../index.html">←</a>  
 
-    <h2>Yelena Serova, la única mujer rusa en el espacio</h2> 
+    <h1>Yelena Serova, la única mujer rusa en el espacio</h1> 
 
-    <p>La joven de 38 años se registra como la única rusa en sumar horas de misión el espacio entre los años 2010 y 2019,
-    </p>
-    <p>
-      evidenciando una clara brecha de género en el campo.
+    <p id = 'bajada'>La joven de 38 años se registra como la única rusa en sumar horas de misión el espacio entre los años 2010 y 2019,
+    <br>evidenciando una clara brecha de género en el campo.
     </p>
     
     <div id="chart"></div>
