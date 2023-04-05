@@ -16,17 +16,20 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     y: {
       label: 'Nacionalidad',
       labelOffset: 200,
-      
     },
+
     x: {
       grid: true,
       tickFormat: 'd', 
       label: 'Horas de misión totales',
       labelOffset: 70,
     },
+
     style: {
       fontFamily: 'Tahoma',
       fontSize: 14,
+      color:'white', 
+      background: 'hsl(0, 0%, 0%)',
     },
 
     height: 600,

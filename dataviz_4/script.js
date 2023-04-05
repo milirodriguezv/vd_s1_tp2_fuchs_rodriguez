@@ -17,7 +17,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
       text: d=> (d.anio_mision).toFixed(0),
       dy: -8,
       fontWeight: d => (d.anio_mision == 2016 ? 'bold': 'normal'),
-      fontSize: '12px',}
+      fontSize: '14px',}
       ),
     ),
 
@@ -42,13 +42,18 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     style: {
       fontFamily: 'Tahoma',
       fontSize: 14,
-      padding: '30px'
+      padding: '30px',
+      background: 'hsl(0, 0%, 0%)',
+      color: 'white'
     },
+
+
     width: 700,
     height: 400,
     marginLeft: 70,
     marginBottom: 20,
     inset: 20
+    
   })
  
   d3.select('#chart').append(() => chart)

@@ -37,13 +37,15 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
     marginLeft: 60, 
     width: 700,
     height: 400,
+    
     style:{
       fontFamily: 'Tahoma',
       fontSize: 14,
-      color:'black', 
+      color:'white', 
       padding: '10px',
-      
+      background: 'hsl(0, 0%, 0%)',
     },
+    
     facet:{
       data: data_filtrada,
       x: "nacionalidad",
