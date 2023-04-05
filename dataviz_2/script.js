@@ -18,6 +18,7 @@ d3.csv('astronautas.csv', d3.autoType).then(data => {
           x: 'edad_mision',
           y: 'mision_hs',
           text: 'nombre',
+          fontWeight: 'bold',
           fill: d=> (d.genero == 'femenino' ? '#ff6f00' : "transparent"),
           dy : -20,
         }),
