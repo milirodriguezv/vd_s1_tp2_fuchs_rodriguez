@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EE.UU. vs. Rusia</title>
     <style>
-      #chart{
-        overflow-y:auto;
-      }
+   
       #chart svg{
         max-width: initial;
         margin: auto;
@@ -21,7 +19,7 @@
       }
       
 
-      p {
+      p#bajada {
         font-family: 'Tahoma', sans-serif;
         margin-top: 30px; 
         text-align: center;
@@ -32,10 +30,11 @@
         font-family: 'Tahoma', sans-serif;
         font-size: small;
         color: #a19f9f;
+        text-align: center;
         margin-top: -10px;
       } 
 
-      a {
+      a#link {
         z-index:100;
         position: absolute;
         font-family: 'Lucida Console';
@@ -52,11 +51,13 @@
   </head>
   <body>
 
-    <a href="/index.html" target="_blank" title="Link a...">←</a>
+    <a id = 'link' href="../../index.html">←</a>
     <h2>Rusia y EEUU: líderes del espacio</h2>
 
-    <p>Ambas potencias compiten por sacar ventaja en cuanto a horas en el espacio, 
-      debido al visible empate entre ambas potencias.
+    <p id = 'bajada'>
+    <a style = "color:rgb(245, 102, 7)"><b>EE.UU.</b></a> y <a style = "color: rgb(142, 6, 144)"><b>Rusia</b></a> 
+    compiten por sacar ventaja en cuanto a horas en el espacio, 
+    debido al visible empate entre ambas.
     </p>
 
     <div id="chart"></div>

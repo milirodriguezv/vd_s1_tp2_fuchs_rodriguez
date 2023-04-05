@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Competencia</title>
     <style>
-      #chart{
-        overflow-y:auto;
-      }
+
       #chart svg{
         max-width: initial;
+        margin:auto;
       }
-      
 
       h2 {
         font-family: 'Tahoma', sans-serif;
@@ -27,18 +25,7 @@
         font-size: small;
       } 
 
-      #chart div {
-        justify-content: center;
-  	  }
-
-      #chart svg {
-        margin:auto;
-      }
-      
-      #legend div {
-        justify-content: center;        
-      }
-
+ 
       p.fuente{
         font-family: 'Tahoma', sans-serif;
         font-size: small;
@@ -46,7 +33,7 @@
         margin-top: -10px;
       } 
 
-      a {
+      a#link {
         z-index:100;
         position: absolute;
         font-family: 'Lucida Console';
@@ -58,18 +45,17 @@
         text-decoration: none;
       }
 
-      
-
     </style>
   </head>
   <body>
-    <a href="/index.html" target="_blank" title="Link a...">←</a>   
+
+    <a id = 'link' href="../../index.html">←</a>   
     <h2>Compitiendo por el espacio...</h2> 
   
-    <p>EE.UU. y Rusia continúan siendo las potencias con más horas exploradas del espacio. Asimismo, se sigue viendo una gran prominencia de figuras masculinas.</p>
+    <p>EE.UU. y Rusia continúan siendo las potencias con más horas exploradas del espacio. 
+    <br>Asi mismo, se sigue viendo una gran prominencia de figuras <a style = "color:rgb(135, 77, 168)"><b>masculinas</b></a>, 
+    por sobre las <a style = "color: rgb(255, 128, 0)"><b>femeninas</b></a>.</p>
     
-
-    <div id="legend"></div>
     <div id="chart"></div>
 
     <p class="fuente">Datos extraídos de la NASA</p>
